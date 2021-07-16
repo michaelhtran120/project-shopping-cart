@@ -1,0 +1,12 @@
+.hero-image {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background-color: #bbe0f0;
+}
+
+.hero-image img {
+  width: 150%;
+  margin: 0;
+}
