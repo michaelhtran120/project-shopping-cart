@@ -1,12 +1,13 @@
 import React from "react";
-import { Link, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
+import "../CSS/home.css";
 import hero from "../Images/home-hero.png";
 
 const Home = () => {
-  const shopStyle = {
+  const shopBtnStyle = {
     position: "absolute",
-    right: "23%",
-    top: "60%",
+    right: "18%",
+    top: "74%",
     textDecoration: "none",
     padding: "16px 20px",
     borderRadius: "30px",
@@ -18,9 +19,9 @@ const Home = () => {
     letterSpacing: "1px",
   };
   return (
-    <div className='hero-image'>
+    <div id='hero-image-container'>
       <img src={hero} alt='olly products' />
-      <Link to='/products' id='hero-btn' style={shopStyle}>
+      <Link to='/products' id='hero-btn' style={shopBtnStyle}>
         Shop Gummy Vitamins
       </Link>
     </div>
