@@ -4,7 +4,7 @@ import hero from "../Images/product-hero.png";
 
 import ProductPrev from "../Components/Productpreview";
 
-const Products = ({ products, onClick }) => {
+const Products = ({ products, onAdd }) => {
   return (
     <div className='products-container'>
       <div className='product-hero'>
@@ -20,7 +20,7 @@ const Products = ({ products, onClick }) => {
               description={item.description}
               price={item.price}
               alt={item.alt}
-              onAdd={() => onClick(item)}
+              onAdd={() => onAdd(item)}
             />
           );
         })}

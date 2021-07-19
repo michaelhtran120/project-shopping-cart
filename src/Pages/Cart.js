@@ -1,7 +1,7 @@
 import React from "react";
 import "../CSS/cart.css";
 
-const Cart = ({ cartItems, onChange }) => {
+const Cart = ({ cartItems, onChange, onDelete }) => {
   if (cartItems.length === 0) {
     return (
       <div>
@@ -23,9 +23,10 @@ const Cart = ({ cartItems, onChange }) => {
                 value={product.qty}
                 onChange={(e) => onChange(e, i)}
                 min='1'
+                max='100'
               />
               <h4>${product.qty * product.price}</h4>
-              <button>Remove</button>
+              <button onClick={() => onDelete(product)}>Remove</button>
             </div>
           ))}
         </div>

@@ -1,3 +1,15 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .cart-container {
   display: grid;
   grid-template-rows: repeat(1fr);
@@ -20,11 +32,11 @@
 }
 
 .cart-item-container input {
-  width: 50px;
-  height: 20px;
+  width: 40px;
   border: 1px solid black;
   border-radius: 3px;
   background-color: #af1685;
+  padding: 6px 12px;
   color: white;
 }
 

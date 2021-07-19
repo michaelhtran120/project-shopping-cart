@@ -7,13 +7,13 @@ import Products from "../Pages/Products";
 import About from "../Pages/About";
 import Cart from "../Pages/Cart";
 
-const Nav = ({ products, onClick, cartItems, onChange }) => {
+const Nav = ({ products, onAdd, cartItems, onChange, onDelete }) => {
   const linkStyle = {
     textDecoration: "none",
     color: "black",
   };
 
-  const cartQty = cartItems.map((item) => item.qty);
+  const cartQty = cartItems.slice().map((item) => item.qty);
   const cartTotalQty =
     cartQty.length === 0 ? 0 : cartQty.reduce((acc, cur) => acc + cur);
 
@@ -64,10 +64,10 @@ const Nav = ({ products, onClick, cartItems, onChange }) => {
           <About />
         </Route>
         <Route exact path='/products'>
-          <Products products={products} onClick={onClick} />
+          <Products products={products} onAdd={onAdd} />
         </Route>
         <Route exact path='/cart'>
-          <Cart cartItems={cartItems} onChange={onChange} />
+          <Cart cartItems={cartItems} onChange={onChange} onDelete={onDelete} />
         </Route>
       </Switch>
     </Router>
