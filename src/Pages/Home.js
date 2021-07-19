@@ -10,6 +10,7 @@ const Home = () => {
     top: "74%",
     textDecoration: "none",
     padding: "16px 20px",
+    border: ".5px solid black",
     borderRadius: "30px",
     backgroundColor: "white",
     color: "#af1685",

@@ -7,11 +7,16 @@ import Products from "../Pages/Products";
 import About from "../Pages/About";
 import Cart from "../Pages/Cart";
 
-const Nav = () => {
+const Nav = ({ products, onClick, cartItems, onChange }) => {
   const linkStyle = {
     textDecoration: "none",
     color: "black",
   };
+
+  const cartQty = cartItems.map((item) => item.qty);
+  const cartTotalQty =
+    cartQty.length === 0 ? 0 : cartQty.reduce((acc, cur) => acc + cur);
+
   return (
     <Router>
       <nav>
@@ -31,9 +36,9 @@ const Nav = () => {
             ABOUT
           </Link>
         </div>
-        <div className='cart-link'>
+        <div className='nav-cart-link'>
           <Link to='/cart' style={linkStyle}>
-            <div className='cart-container'>
+            <div className='nav-cart-container'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 height='24px'
@@ -46,7 +51,7 @@ const Nav = () => {
                   <path d='M18,6h-2c0-2.21-1.79-4-4-4S8,3.79,8,6H6C4.9,6,4,6.9,4,8v12c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2V8C20,6.9,19.1,6,18,6z M12,4c1.1,0,2,0.9,2,2h-4C10,4.9,10.9,4,12,4z M18,20H6V8h2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8h4v2c0,0.55,0.45,1,1,1s1-0.45,1-1V8 h2V20z' />
                 </g>
               </svg>
-              <span>0</span>
+              <span>{cartTotalQty}</span>
             </div>
           </Link>
         </div>
@@ -59,10 +64,10 @@ const Nav = () => {
           <About />
         </Route>
         <Route exact path='/products'>
-          <Products />
+          <Products products={products} onClick={onClick} />
         </Route>
         <Route exact path='/cart'>
-          <Cart />
+          <Cart cartItems={cartItems} onChange={onChange} />
         </Route>
       </Switch>
     </Router>

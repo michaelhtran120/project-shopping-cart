@@ -1,0 +1,28 @@
+.products-container {
+  width: 100vw;
+}
+.products-container img {
+  width: 100%;
+}
+.products-preview-grid {
+  margin-top: 5%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.product img {
+  width: 70%;
+  width: 70%;
+}
+
+.product button {
+  padding: 10px 14px;
+  background-color: #af1685;
+  color: white;
+  border: none;
+  border-radius: 2px;
+}
