@@ -9,6 +9,7 @@ const Cart = ({
   increment,
   decrement,
   cartTotalPrice,
+  checkout,
 }) => {
   if (cartItems.length === 0) {
     return (
@@ -58,7 +59,9 @@ const Cart = ({
           <h3>Total: </h3>
           <h4>${cartTotalPrice}</h4>
         </div>
-        <button className='checkout-btn'>Checkout</button>
+        <button className='checkout-btn' onClick={checkout}>
+          Checkout
+        </button>
       </>
     );
   }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import "./App.css";
+import "./CSS/App.css";
 import Nav from "./Components/Nav";
 
 import sleepImg from "./Images/sleep.png";
@@ -96,6 +96,11 @@ function App() {
     setCart(cartCopy);
   };
 
+  const checkout = () => {
+    alert("Thank You For Your Order");
+    setCart([]);
+  };
+
   useEffect(() => {
     if (cart.length > 0) {
       const cartQty = cart.slice().map((item) => item.qty);
@@ -130,6 +135,7 @@ function App() {
         increment={increaseQty}
         decrement={decreaseQty}
         cartTotalPrice={cartTotalPrice}
+        checkout={checkout}
       />
     </div>
   );

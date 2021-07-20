@@ -17,6 +17,7 @@ const Nav = ({
   increment,
   decrement,
   cartTotalPrice,
+  checkout,
 }) => {
   const linkStyle = {
     textDecoration: "none",
@@ -80,6 +81,7 @@ const Nav = ({
             increment={increment}
             decrement={decrement}
             cartTotalPrice={cartTotalPrice}
+            checkout={checkout}
           />
         </Route>
       </Switch>
