@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/project-shopping-cart/static/css/main.c883e5fc.chunk.css",
+    "main.js": "/project-shopping-cart/static/js/main.c445b605.chunk.js",
+    "main.js.map": "/project-shopping-cart/static/js/main.c445b605.chunk.js.map",
+    "runtime-main.js": "/project-shopping-cart/static/js/runtime-main.48f4b680.js",
+    "runtime-main.js.map": "/project-shopping-cart/static/js/runtime-main.48f4b680.js.map",
+    "static/js/2.cffda23a.chunk.js": "/project-shopping-cart/static/js/2.cffda23a.chunk.js",
+    "static/js/2.cffda23a.chunk.js.map": "/project-shopping-cart/static/js/2.cffda23a.chunk.js.map",
+    "index.html": "/project-shopping-cart/index.html",
+    "static/css/main.c883e5fc.chunk.css.map": "/project-shopping-cart/static/css/main.c883e5fc.chunk.css.map",
+    "static/js/2.cffda23a.chunk.js.LICENSE.txt": "/project-shopping-cart/static/js/2.cffda23a.chunk.js.LICENSE.txt",
+    "static/media/about-hero.da8d3dfc.png": "/project-shopping-cart/static/media/about-hero.da8d3dfc.png",
+    "static/media/energy.26fab1c1.png": "/project-shopping-cart/static/media/energy.26fab1c1.png",
+    "static/media/focus.af2b7e05.png": "/project-shopping-cart/static/media/focus.af2b7e05.png",
+    "static/media/home-hero.603b33a9.png": "/project-shopping-cart/static/media/home-hero.603b33a9.png",
+    "static/media/probiotic.96b7f099.png": "/project-shopping-cart/static/media/probiotic.96b7f099.png",
+    "static/media/product-hero.71c6413f.png": "/project-shopping-cart/static/media/product-hero.71c6413f.png",
+    "static/media/sleep.a8f06622.png": "/project-shopping-cart/static/media/sleep.a8f06622.png",
+    "static/media/stress.3da5bddf.png": "/project-shopping-cart/static/media/stress.3da5bddf.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.48f4b680.js",
+    "static/js/2.cffda23a.chunk.js",
+    "static/css/main.c883e5fc.chunk.css",
+    "static/js/main.c445b605.chunk.js"
+  ]
+}
