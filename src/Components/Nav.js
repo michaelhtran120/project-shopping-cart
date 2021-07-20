@@ -16,6 +16,7 @@ const Nav = ({
   cartTotal,
   increment,
   decrement,
+  cartTotalPrice,
 }) => {
   const linkStyle = {
     textDecoration: "none",
@@ -24,7 +25,7 @@ const Nav = ({
 
   return (
     <Router>
-      <nav>
+      <nav id='navbar'>
         <div className='nav-logo'>
           <Link to='/'>
             <img src={logo} alt='logo' />
@@ -78,6 +79,7 @@ const Nav = ({
             onDelete={onDelete}
             increment={increment}
             decrement={decrement}
+            cartTotalPrice={cartTotalPrice}
           />
         </Route>
       </Switch>

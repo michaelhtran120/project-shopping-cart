@@ -53,28 +53,11 @@ function App() {
     },
   ]);
 
-  const [cart, setCart] = useState([
-    {
-      alt: "Sleep Gummy Container",
-      description: "For a healthy sleep cycle",
-      id: 1,
-      imgsrc: "/static/media/sleep.a8f06622.png",
-      name: "Sleep",
-      price: 13.99,
-      qty: 2,
-    },
-    {
-      alt: "Energy Gummy Container",
-      description: "For a steady flow of energy",
-      id: 2,
-      imgsrc: "/static/media/energy.26fab1c1.png",
-      name: "Daily Energy",
-      price: 13.99,
-      qty: 2,
-    },
-  ]);
+  const [cart, setCart] = useState([]);
 
   const [cartTotal, setCartTotal] = useState(0);
+
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
 
   const addItem = (product) => {
     const exist = cart.find((x) => x.id === product.id);
@@ -114,10 +97,25 @@ function App() {
   };
 
   useEffect(() => {
-    const cartQty = cart.slice().map((item) => item.qty);
-    const cartTotalQty =
-      cartQty.length === 0 ? 0 : cartQty.reduce((acc, cur) => acc + cur);
-    setCartTotal(cartTotalQty);
+    if (cart.length > 0) {
+      const cartQty = cart.slice().map((item) => item.qty);
+      const cartTotalQty =
+        cartQty.length === 0 ? 0 : cartQty.reduce((acc, cur) => acc + cur);
+      setCartTotal(cartTotalQty);
+    } else if (cart.length === 0) {
+      setCartTotal(0);
+    }
+  }, [cart]);
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      const cartTotalValue = cart
+        .map((item) => item.qty * item.price)
+        .reduce((acc, cur) => acc + cur);
+      setCartTotalPrice(cartTotalValue);
+    } else if (cart.length === 0) {
+      setCartTotalPrice(0);
+    }
   }, [cart]);
 
   return (
@@ -131,6 +129,7 @@ function App() {
         cartTotal={cartTotal}
         increment={increaseQty}
         decrement={decreaseQty}
+        cartTotalPrice={cartTotalPrice}
       />
     </div>
   );

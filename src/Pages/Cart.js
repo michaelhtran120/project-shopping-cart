@@ -1,11 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../CSS/cart.css";
 
-const Cart = ({ cartItems, onChange, onDelete, increment, decrement }) => {
+const Cart = ({
+  cartItems,
+  onChange,
+  onDelete,
+  increment,
+  decrement,
+  cartTotalPrice,
+}) => {
   if (cartItems.length === 0) {
     return (
-      <div>
-        <h2>Cart is empty</h2>
+      <div className='empty-cart-container'>
+        <h2>No items in your cart</h2>
+        <Link to='/products'>
+          <button>GO TO PRODUCTS</button>
+        </Link>
       </div>
     );
   } else {
@@ -17,8 +28,10 @@ const Cart = ({ cartItems, onChange, onDelete, increment, decrement }) => {
               <img src={product.imgsrc} alt={`${product.name} product`} />
               <h3>{product.name}</h3>
               <h4>${product.price}</h4>
-              <div>
-                <button onClick={() => decrement(i)}> - </button>
+              <div className='qty-container'>
+                <button className='qty-btn' onClick={() => decrement(i)}>
+                  ➖
+                </button>
                 <input
                   type='number'
                   id={product.id}
@@ -27,16 +40,25 @@ const Cart = ({ cartItems, onChange, onDelete, increment, decrement }) => {
                   min='1'
                   max='100'
                 />
-                <button onClick={() => increment(i)}> + </button>
+                <button className='qty-btn' onClick={() => increment(i)}>
+                  ➕
+                </button>
               </div>
               <h4>${product.qty * product.price}</h4>
-              <button onClick={() => onDelete(product)}>Remove</button>
+              <button className='delete-btn' onClick={() => onDelete(product)}>
+                Remove From Cart
+              </button>
             </div>
           ))}
         </div>
         <br />
         <br />
         <hr />
+        <div className='cart-total-container'>
+          <h3>Total: </h3>
+          <h4>${cartTotalPrice}</h4>
+        </div>
+        <button className='checkout-btn'>Checkout</button>
       </>
     );
   }

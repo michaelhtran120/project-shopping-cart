@@ -15,8 +15,8 @@
 }
 
 .product img {
-  width: 70%;
-  width: 70%;
+  width: 60%;
+  height: 60%;
 }
 
 .product button {
@@ -29,6 +29,6 @@
 
 .product button:hover {
   background-color: white;
-  border: 1px solid #af1685;
+  border: 2px solid #af1685;
   color: black;
 }
