@@ -19,7 +19,7 @@ input[type="number"] {
 
 .cart-item-container {
   display: grid;
-  grid-template-columns: 20% 20% 1fr 10% 10% 8%;
+  grid-template-columns: 20% 10% 1fr 15% 10% 8%;
   align-items: center;
   width: 80%;
   margin-left: auto;
@@ -32,12 +32,10 @@ input[type="number"] {
 }
 
 .cart-item-container input {
-  width: 40px;
-  border: 1px solid black;
+  width: 30px;
+  border: 1px solid #af1685;
   border-radius: 3px;
-  background-color: #af1685;
   padding: 6px 12px;
-  color: white;
 }
 
 .cart-item-container button {

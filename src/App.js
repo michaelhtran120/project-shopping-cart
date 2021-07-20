@@ -52,6 +52,7 @@ function App() {
       alt: "Stress Gummy Container",
     },
   ]);
+
   const [cart, setCart] = useState([
     {
       alt: "Sleep Gummy Container",
@@ -73,6 +74,8 @@ function App() {
     },
   ]);
 
+  const [cartTotal, setCartTotal] = useState(0);
+
   const addItem = (product) => {
     const exist = cart.find((x) => x.id === product.id);
     if (exist) {
@@ -86,9 +89,10 @@ function App() {
     }
   };
 
-  // const removeItem = (product) => {
-  //   console.log(product);
-  // };
+  const removeItem = (product) => {
+    const cartCopy = cart.filter((item) => item.id !== product.id);
+    setCart(cartCopy);
+  };
 
   const qtyChange = (e, index) => {
     const { value } = e.target;
@@ -96,6 +100,25 @@ function App() {
     cartCopy[index].qty = Number(value);
     setCart(cartCopy);
   };
+
+  const increaseQty = (index) => {
+    const cartCopy = [...cart];
+    cartCopy[index].qty = cartCopy[index].qty + 1;
+    console.log(cartCopy);
+    setCart(cartCopy);
+  };
+  const decreaseQty = (index) => {
+    const cartCopy = [...cart];
+    cartCopy[index].qty = cartCopy[index].qty - 1;
+    setCart(cartCopy);
+  };
+
+  useEffect(() => {
+    const cartQty = cart.slice().map((item) => item.qty);
+    const cartTotalQty =
+      cartQty.length === 0 ? 0 : cartQty.reduce((acc, cur) => acc + cur);
+    setCartTotal(cartTotalQty);
+  }, [cart]);
 
   return (
     <div className='App'>
@@ -105,6 +128,9 @@ function App() {
         cartItems={cart}
         onChange={qtyChange}
         onDelete={removeItem}
+        cartTotal={cartTotal}
+        increment={increaseQty}
+        decrement={decreaseQty}
       />
     </div>
   );

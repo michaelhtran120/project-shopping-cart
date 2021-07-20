@@ -26,3 +26,9 @@
   border: none;
   border-radius: 2px;
 }
+
+.product button:hover {
+  background-color: white;
+  border: 1px solid #af1685;
+  color: black;
+}
