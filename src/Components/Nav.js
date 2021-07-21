@@ -28,12 +28,12 @@ const Nav = ({
     <Router>
       <nav id='navbar'>
         <div className='nav-logo'>
-          <Link to='/'>
+          <Link to='/project-shopping-cart'>
             <img src={logo} alt='logo' />
           </Link>
         </div>
         <div className='nav-links'>
-          <Link to='/' style={linkStyle}>
+          <Link to='/project-shopping-cart' style={linkStyle}>
             HOME
           </Link>
           <Link to='/products' style={linkStyle}>
@@ -64,7 +64,7 @@ const Nav = ({
         </div>
       </nav>
       <Switch>
-        <Route exact path='/'>
+        <Route exact path='/project-shopping-cart'>
           <Home />
         </Route>
         <Route exact path='/about'>
